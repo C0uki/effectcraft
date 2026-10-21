@@ -433,21 +433,24 @@ const SIMPLIFIED_CHINESE: &[Row] = &[
 /// for that effect.
 const TRADITIONAL_CHINESE: &[Row] = &[];
 
-/// Japanese (`ja`): reserved for the Japanese data point on #821, so both languages share this
-/// one catalog instead of inventing a second mechanism. A translator fills one row per effect,
-/// ids from [`SIMPLIFIED_CHINESE`]; the names Adobe's Japanese interface leaves in English (the
-/// `CC` series, the `OCIO` set, `Cryptomatte`, `EXtractoR`, `IDentifier`,
-/// `Key Light`, `Unmult`, `Twirl (Legacy)` and the two EffectCraft-only effects) repeat that
-/// English name here rather than being left out.
+/// Japanese (`ja`): the slot reserved for the Japanese data point on #821, so both languages
+/// share this one catalog instead of inventing a second mechanism. One row per effect, ids from
+/// [`SIMPLIFIED_CHINESE`].
 ///
-/// The rows below were read from the installed After Effects 2026 (26.5) Japanese interface
-/// (its generated Effect menu and its Effects & Presets panel).
+/// The rows come from two sources:
 ///
-/// The remaining rows were written from the meaning of each English name, in ordinary Japanese
-/// vocabulary, without consulting any other product's localisation resources. The `CC` series, the
-/// `OCIO` set and the third-party brand names (`Cryptomatte`, `EXtractoR`, `IDentifier`, `Key Light`,
-/// `Unmult`, `Mocha shape`, `Colorama`, `Vegas`) repeat their English name here by choice; the
-/// `VR` set keeps `VR` and translates the rest.
+/// - The 18 rows that were in this table first (Bilateral, Camera Lens, Channel, Compound,
+///   Directional, Fast Box, Gaussian and Radial Blur; Lumetri Color; Color Key; Luma Key; Spill
+///   Suppressor; Basic 3D; Basic Text; Gaussian Blur (Legacy); Lightning; Path Text; Pixel Motion
+///   Blur) were read from the installed After Effects 2026 (26.5) Japanese interface (its
+///   generated Effect menu and its Effects & Presets panel).
+/// - Every other row was written from the meaning of the English name, in ordinary Japanese
+///   vocabulary, without consulting any other product's localisation resources.
+///
+/// A language decides for itself which names stay English, so a row repeating the English name is
+/// a choice, not a missing row. Here that is the `CC` series, the `OCIO` set and the third-party
+/// brand names (`Cryptomatte`, `EXtractoR`, `IDentifier`, `Key Light`, `Unmult`, `Mocha shape`,
+/// `Colorama`, `Vegas`); the `VR` set keeps `VR` and translates the rest.
 const JAPANESE_EFFECTS: &[Row] = &[
     ("ec.3d.channelextract", "3D Channel Extract", "3D チャンネル抽出"),
     ("ec.3d.cryptomatte", "Cryptomatte", "Cryptomatte"),
